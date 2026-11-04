@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="شعار صناع الحركة">
+  <defs>
+    <linearGradient id="brandGradient" x1="10" y1="8" x2="88" y2="90" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#19e3ff"/>
+      <stop offset=".46" stop-color="#6d5dfc"/>
+      <stop offset="1" stop-color="#ff4d9d"/>
+    </linearGradient>
+    <linearGradient id="starGradient" x1="34" y1="24" x2="70" y2="76" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#fff3b0"/>
+    </linearGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="3" y="3" width="90" height="90" rx="29" fill="url(#brandGradient)"/>
+  <circle cx="48" cy="48" r="34" fill="#ffffff" opacity=".10"/>
+  <path d="M20 39h14M15 49h12M22 59h11" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" opacity=".55"/>
+  <path d="M60.2 22.5l4.3 10.3 11.1 1-8.4 7.4 2.5 10.9-9.5-5.7-9.5 5.7 2.5-10.9-8.4-7.4 11.1-1z" fill="url(#starGradient)" filter="url(#softGlow)"/>
+  <circle cx="75" cy="24" r="3.2" fill="#ffffff" opacity=".9"/>
+  <circle cx="78" cy="67" r="2.4" fill="#ffffff" opacity=".65"/>
+  <circle cx="25" cy="73" r="2.1" fill="#ffffff" opacity=".55"/>
+</svg>
