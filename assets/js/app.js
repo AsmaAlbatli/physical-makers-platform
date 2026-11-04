@@ -165,7 +165,6 @@
         <button class="stage-card ${stage.id === activeStageId ? "is-active" : ""}"
           id="tab-${stage.id}" type="button" role="tab" data-stage="${stage.id}"
           aria-selected="${stage.id === activeStageId}" aria-controls="stage-${stage.id}"
-          aria-label="${esc(stage.name)}، ${ar(stats.done)} من ${ar(stats.total)} اختبارات، ${ar(stats.stars)} من ${ar(stats.maxStars)} نجمة"
           tabindex="${stage.id === activeStageId ? "0" : "-1"}"
           style="--c1:${stage.color};--c2:${stage.color2}">
           <span class="stage-card-check" aria-hidden="true">✓</span>
@@ -194,7 +193,7 @@
           <span class="stage-kicker">${stage.icon} ${esc(stage.tag)}</span>
           <h2>${esc(stage.name)} <span class="stage-age">${esc(stage.age)}</span></h2>
           <p class="stage-intro">${esc(stage.intro)}</p>
-          <div class="focus-chips" aria-label="مهارات هذه المرحلة">
+          <div class="focus-chips" role="group" aria-label="مهارات هذه المرحلة">
             ${stage.focus.map((focus) => `<span>${esc(focus)}</span>`).join("")}
           </div>
         </div>
@@ -226,11 +225,11 @@
         <div class="sport-media">
           <img src="${sport.image}" alt="${esc(sport.name)} — ${esc(stage.name)}" loading="lazy">
           <span class="sport-emoji" aria-hidden="true">${sport.icon}</span>
-          <span class="sport-stars" data-card-stars="${key}" aria-label="${best ? `أفضل نتيجة: ${ar(stars)} من ${ar(3)} نجوم` : "لم تُسجل نتيجة بعد"}">
+          <span class="sport-stars" role="img" data-card-stars="${key}" aria-label="${best ? `أفضل نتيجة: ${ar(stars)} من ${ar(3)} نجوم` : "لم تُسجل نتيجة بعد"}">
             ${[1, 2, 3].map((index) => starSvg(index <= stars)).join("")}
           </span>
           <span class="sport-duration" aria-hidden="true">▶ ${esc(video.duration)}</span>
-          <span class="card-done" data-done="${key}" ${best ? "" : "hidden"}>${doneLabel}</span>
+          <span class="card-done" role="img" data-done="${key}" ${best ? "" : "hidden"}>${doneLabel}</span>
         </div>
         <div class="sport-body">
           <div class="sport-head">
@@ -270,8 +269,7 @@
       const sport = SPORTS[sportKey];
       const video = VIDEOS[sport.videoKey];
       return `
-        <button class="video-tile" type="button" data-video="${sportKey}" style="--vcolor:${sport.color}"
-          aria-label="شاهد فيديو ${esc(video.title)}">
+        <button class="video-tile" type="button" data-video="${sportKey}" style="--vcolor:${sport.color}">
           <span class="video-thumb">
             <img src="${video.thumb}" alt="" loading="lazy">
             <span class="play-badge" aria-hidden="true">▶</span>
@@ -305,10 +303,6 @@
         }
         const bar = $(".stage-card-bar i", card);
         if (bar) bar.style.width = `${percent}%`;
-        card.setAttribute(
-          "aria-label",
-          `${stage.name}، ${ar(stats.done)} من ${ar(stats.total)} اختبارات، ${ar(stats.stars)} من ${ar(stats.maxStars)} نجمة`
-        );
       }
 
       const ring = $(`[data-ring="${stage.id}"]`);
@@ -752,7 +746,7 @@
     els.quizBody.innerHTML = `
       <div class="result">
         <span class="result-kicker">نتيجتك في ${esc(SPORTS[quiz.sportKey].name)}</span>
-        <div class="result-stars" aria-label="${ar(stars)} من ${ar(3)} نجوم">${starsHtml}</div>
+        <div class="result-stars" role="img" aria-label="${ar(stars)} من ${ar(3)} نجوم">${starsHtml}</div>
         <h2>${copy.title}</h2>
         <p>${copy.text}</p>
         <div class="result-score">
