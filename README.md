@@ -6,7 +6,9 @@
 
 ## الرابط
 
-**https://asmaalbatli.github.io/physical-makers-platform/**
+**https://physical-makers-platform.vercel.app/**
+
+> ملاحظة: رابط GitHub Pages القديم (`https://asmaalbatli.github.io/physical-makers-platform/`) قد يعرض تحذيرًا في Chrome لأن نطاق `asmaalbatli.github.io` بالكامل مُعلَّم من Google Safe Browsing، وليس بسبب المنصة نفسها. استخدم رابط Vercel أعلاه.
 
 ## المحتوى
 
